@@ -8,7 +8,7 @@ JSMESS._runReadies = function() {
 			JSMESS._readyList[r].call(window, []);
 		};
 		JSMESS._readyList = [];
-	};
+	}; 
 };
 JSMESS._readyCheck = function() {
 	if (JSMESS.running) {
@@ -96,7 +96,7 @@ var update_countdown = function() {
     var headID = document.getElementsByTagName("head")[0];
 		var newScript = document.createElement('script');
 		newScript.type = 'text/javascript';
-		newScript.src = 'genesis/messmegadriv.js';
+		newScript.src = 'messmegadriv.js';
 		headID.appendChild(newScript);
   }
 };

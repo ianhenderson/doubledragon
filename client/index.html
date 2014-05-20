@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html ng-app="hackathon">
+<html ng-app="messapp">
 <head>
   <meta charset='utf8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width">
   <title>Double Dragon</title>
-  <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
   <!-- <link rel="stylesheet" href="styles/css/app.css"/> -->
+  <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
   <body>
@@ -18,22 +19,27 @@
           </div>
           <ul class="nav navbar-nav">
             <li>
-              <a href="#/dd">Double Dragon</a>
+              <a href="/dd">Double Dragon</a>
             </li>
             <li>
-              <a href="#/sor2">Streets of Rage 2</a>
+              <a href="/sor2">Streets of Rage 2</a>
             </li>
           </ul>
         </div>
       </nav>
     </header>
     <div id='canvasholder' style="text-align: center;">
-    <div ng-view></div>
+    <button id="gofullscreen">Fullscreen</button>
+    <div ng-view>
+      Play your favorite beat-em-up games online...RIGHT NOW!!!
+    </div>
 
     <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
     <script src="app.js"></script>
     <script src="modernizr-custom.js"></script>
     <script src="messloader.js"></script>
+    <!-- <script src="jsmess-launcher.js"></script> -->
     <script src="messmegadriv.js"></script>
   </body>
 </html>
