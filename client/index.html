@@ -4,41 +4,63 @@
   <meta charset='utf8'>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width">
-  <title>Double Dragon</title>
+  <title>Double Dragon...ONLINE!!</title>
   <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.css">
   <!-- <link rel="stylesheet" href="styles/css/app.css"/> -->
   <script src="lib/jquery/dist/jquery.min.js"></script>
   <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="app.js"></script>
 </head>
   <body>
-    <header>
-      <nav class='navbar navbar-default' role='navigation'>
-        <div class='container-fluid'>
-          <div class='navbar-header'>
-            <a class="navbar-brand" ui-sref=''>JS メガドライブ</a>
-          </div>
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="/dd">Double Dragon</a>
-            </li>
-            <li>
-              <a href="/sor2">Streets of Rage 2</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <div id='canvasholder' style="text-align: center;">
-    <button id="gofullscreen">Fullscreen</button>
-    <div ng-view>
-    </div>
+    <div ng-controller="infotoggle">
 
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="app.js"></script>
+      <header>
+        <nav class='navbar navbar-default' role='navigation'>
+          <div class='container-fluid'>
+            <div class='navbar-header'>
+              <a class="navbar-brand" ui-sref=''>JS メガドライブ: DOUBLE DRAGON
+              </a>
+            </div>
+            <div>
+              <ul class="nav navbar-nav">
+                <li>
+                  <a href ng-click="toggleinfo()">Info</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <!-- ng-cloak will hide the body until Angular is loaded -->
+    <div id="main" ng-cloak class="ng-cloak">
+
+      <!-- Some info about JSMess -->
+      <div ng-show="showinfo" style="text-align: center;">
+
+        <div id="info">
+          <p>Info:</p>
+          <p> This was built using <a href="https://github.com/jsmess/jsmess">JSMess</a>, a port of the MESS emulator to JavaScript using Emscripten. More info can be found at the link above.</p>
+        </div>
+      </div>
+
+      <!-- Main view of the page -->
+      <div ng-show="!showinfo" style="text-align: center;">
+
+        <!-- JSMess will draw the game on a canvas appended below. -->
+        <div id='canvasholder' >
+
+        <div id="controls">
+          <p>Controls for Double Dragon (MegaDrive version):</p>
+          <p>Since JSMESS doesn't recognize certain keyboards properly, use the tab key to open up the settings menu, then choose "Input (this System) and assign keys to ones on your system.</p>
+        </div>
+       </div> 
+      </div>
+
+    </div>
     <script src="modernizr-custom.js"></script>
     <script src="messloader.js"></script>
-    <!-- <script src="jsmess-launcher.js"></script> -->
     <script src="messmegadriv.js"></script>
   </body>
 </html>
