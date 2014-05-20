@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="hackathon">
+<head>
+  <meta charset='utf8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width">
+  <title>Double Dragon</title>
+  <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="styles/css/app.css"/> -->
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+  <body>
+    <header>
+      <nav class='navbar navbar-default' role='navigation'>
+        <div class='container-fluid'>
+          <div class='navbar-header'>
+            <a class="navbar-brand" ui-sref=''>JS メガドライブ</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#/dd">Double Dragon</a>
+            </li>
+            <li>
+              <a href="#/sor2">Streets of Rage 2</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div id='canvasholder' style="text-align: center;">
+    <div ng-view></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="modernizr-custom.js"></script>
+    <script src="messloader.js"></script>
+    <script src="messmegadriv.js"></script>
+  </body>
+</html>
