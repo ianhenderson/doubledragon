@@ -9,6 +9,6 @@
   "author": "Ian Henderson",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "express": "~4.2.0",
+    "express": "~4.2.0"
   }
 }
